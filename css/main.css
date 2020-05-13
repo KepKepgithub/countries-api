@@ -307,12 +307,14 @@ body {
   }
   .moreInfo .contentWrap .textWrap1 {
     grid-area: text1;
+    padding-left: 3rem;
   }
   .moreInfo .contentWrap .textWrap2 {
     grid-area: text2;
     position: relative;
   }
   .moreInfo .contentWrap .modalBordersWrap {
+    padding-left: 3rem;
     grid-area: button;
   }
 }
