@@ -1,0 +1,38 @@
+@media(min-width: 1px)
+    header
+        background: var(--element)
+        box-shadow: 0px 0px 27px -10px rgba(0,0,0,0.25)
+        display: flex
+        justify-content: space-between
+        align-items: center
+        padding: 3rem 2rem
+        margin-bottom: 2rem
+        position: fixed
+        width: 100%
+        left: 0
+        z-index: 10000
+        h1
+            font-size: 1.7rem
+            color: var(--text)
+        input
+            display: none
+            pointer-events: none
+        input:checked ~ label
+            svg
+                fill: white
+        label
+            display: flex
+            align-items: center
+            cursor: pointer
+            svg
+                margin-right: 1rem
+                transform: rotate(-45deg)
+            span
+                color: var(--text)
+                &::selection
+                    background: transparent
+
+
+@media(min-width: 1024px)
+    header
+        padding: 3rem 5rem

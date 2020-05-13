@@ -1,0 +1,90 @@
+@media(min-width: 1px)
+    .moreInfo
+        left: 0
+        position: absolute
+        width: 100%
+        height: calc( 100vh - 8.4rem )
+        background: var(--background)
+        padding: 0 2rem
+        overflow: scroll
+        // the back button
+        button
+            margin-top: 2rem
+            margin-bottom: 3rem
+            padding: .5rem 3rem
+            background: var(--element)
+            color: var(--text)
+            font-weight: bold
+            font-size: 2rem
+            border: none
+            cursor: pointer
+        div
+            // THe image
+            &:nth-child(1)
+                max-width: 60rem
+                width: 100%
+                height: 20rem
+                background-repeat: no-repeat
+                background-size: cover
+                background-position: center
+                margin-bottom: 4rem
+            // two text wraps
+            &:nth-child(2),&:nth-child(3)
+                color: var(--text)
+                h1
+                    margin-bottom: 2rem
+                p
+                    font-size: 1.5rem
+                    font-weight: 800
+                    margin-bottom: 1rem
+                    span
+                        font-weight: 300
+            &:nth-child(2)
+                margin-bottom: 5rem
+            &:nth-child(3)
+                margin-bottom: 5rem
+        .modalBordersWrap
+            button
+                width: 14rem
+                margin: .5rem
+                &:last-child
+                    margin-bottom: 5rem
+
+@media(min-width: 440px)
+    .moreInfo
+        div
+            &:nth-child(1)
+                height: 30rem
+
+
+@media(min-width: 600px)
+    .moreInfo
+        div
+            &:nth-child(1)
+                height: 40rem
+
+
+@media(min-width: 1024px)
+
+
+@media(min-width: 1350px)
+    .moreInfo
+        .contentWrap
+            padding: 0 5rem
+            padding-top: 10rem
+            display: grid
+            grid-template-columns: 60rem 1fr 1fr
+            grid-template-areas: "img text1 text2" "img button button"
+            align-content: center
+            .flag
+                grid-area: img
+            .textWrap1,.textWrap2
+                margin-bottom: 0
+                padding-top: 5rem
+            .textWrap1
+                grid-area: text1
+            .textWrap2
+                grid-area: text2
+                position: relative
+            .modalBordersWrap
+                grid-area: button

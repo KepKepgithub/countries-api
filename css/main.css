@@ -1,0 +1,338 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,600;0,800;1,300&display=swap");
+:root {
+  --background: hsl(0, 0%, 98%);
+  --text: hsl(200, 15%, 8%);
+  --element: hsl(0, 0%, 100%);
+  --input: hsl(0, 0%, 52%);
+}
+
+[data-theme=dark] {
+  --background: hsl(207, 26%, 17%);
+  --text: hsl(0, 0%, 100%);
+  --element: hsl(209, 23%, 22%);
+  --input: hsl(0, 0%, 100%);
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body, button, input, div, span {
+  font-size: 1.4rem;
+  font-family: "Nunito Sans", sans-serif;
+}
+
+.moreInfo {
+  font-size: 1.6rem;
+  font-family: "Nunito Sans", sans-serif;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--background);
+}
+
+.pageWrap {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto 0 auto;
+}
+
+@media (min-width: 1px) {
+  header {
+    background: var(--element);
+    box-shadow: 0px 0px 27px -10px rgba(0, 0, 0, 0.25);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3rem 2rem;
+    margin-bottom: 2rem;
+    position: fixed;
+    width: 100%;
+    left: 0;
+    z-index: 10000;
+  }
+  header h1 {
+    font-size: 1.7rem;
+    color: var(--text);
+  }
+  header input {
+    display: none;
+    pointer-events: none;
+  }
+  header input:checked ~ label svg {
+    fill: white;
+  }
+  header label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+  header label svg {
+    margin-right: 1rem;
+    transform: rotate(-45deg);
+  }
+  header label span {
+    color: var(--text);
+  }
+  header label span::selection {
+    background: transparent;
+  }
+}
+@media (min-width: 1024px) {
+  header {
+    padding: 3rem 5rem;
+  }
+}
+@media (min-width: 1px) {
+  .filterWrap {
+    padding: 0rem 2rem;
+    padding-top: 12rem;
+  }
+
+  .searchWrap {
+    position: relative;
+  }
+  .searchWrap .search {
+    background: var(--element);
+    border: none;
+    color: var(--input);
+    padding: 1rem 0rem 1rem 6rem;
+    border-radius: 0.5rem;
+    box-shadow: 0px 0px 27px -10px rgba(0, 0, 0, 0.25);
+    width: 100%;
+    margin-bottom: 3rem;
+  }
+  .searchWrap .searchIcon {
+    position: absolute;
+    left: calc( 3rem - 1.2rem );
+    top: calc( 2rem - 1.2rem );
+    fill: var(--input);
+  }
+
+  .costumSelect {
+    position: relative;
+  }
+  .costumSelect .selected, .costumSelect .option {
+    background: var(--element);
+    color: var(--text);
+    font-size: 1.7rem;
+    cursor: pointer;
+  }
+  .costumSelect .selected {
+    margin-bottom: 4rem;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    position: relative;
+    box-shadow: 0px 0px 27px -10px rgba(0, 0, 0, 0.25);
+  }
+  .costumSelect .selected::after {
+    content: "▼";
+    position: absolute;
+    right: 3rem;
+  }
+  .costumSelect .optionWrap {
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0px 0px 27px -10px rgba(0, 0, 0, 0.25);
+    height: 0;
+    overflow: hidden;
+    transition: all 200ms ease;
+    position: absolute;
+    z-index: 5;
+    width: 100%;
+  }
+  .costumSelect .optionWrap .option {
+    padding: 1rem 3rem;
+  }
+  .costumSelect .optionWrap .option:hover, .costumSelect .optionWrap .option:active {
+    filter: brightness(0.8);
+  }
+  .costumSelect .active {
+    height: 21.5rem;
+  }
+}
+@media (min-width: 1024px) {
+  .filterWrap {
+    padding: 0 5rem;
+    padding-top: 12rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  .filterWrap .searchWrap .search {
+    margin: 0;
+    padding: 1.35rem 0rem 1.35rem 6rem;
+    width: 40rem;
+  }
+  .filterWrap .costumSelect .selected {
+    padding: 1.25rem 1rem;
+    width: 20rem;
+  }
+}
+@media (min-width: 1px) {
+  .cardWrap {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    justify-items: center;
+    padding: 0 3rem;
+    gap: 6rem;
+  }
+  .cardWrap .cardBody {
+    background: var(--element);
+    border-radius: 0.5rem;
+    box-shadow: 0px 0px 27px -10px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    width: 100%;
+    max-width: 40rem;
+  }
+  .cardWrap .cardBody div:nth-child(1) {
+    width: 100%;
+    height: 20rem;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+  }
+  .cardWrap .cardBody div:nth-child(2) {
+    padding: 2rem 2rem 5rem 2rem;
+    color: var(--text);
+  }
+  .cardWrap .cardBody div:nth-child(2) h1 {
+    margin-bottom: 2rem;
+  }
+  .cardWrap .cardBody div:nth-child(2) p {
+    font-weight: bold;
+    font-size: 1.6rem;
+  }
+  .cardWrap .cardBody div:nth-child(2) p span {
+    font-weight: 300;
+  }
+}
+@media (min-width: 1024px) {
+  .cardWrap {
+    padding: 5rem;
+  }
+}
+@media (min-width: 1px) {
+  .moreInfo {
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: calc( 100vh - 8.4rem );
+    background: var(--background);
+    padding: 0 2rem;
+    overflow: scroll;
+  }
+  .moreInfo button {
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+    padding: 0.5rem 3rem;
+    background: var(--element);
+    color: var(--text);
+    font-weight: bold;
+    font-size: 2rem;
+    border: none;
+    cursor: pointer;
+  }
+  .moreInfo div:nth-child(1) {
+    max-width: 60rem;
+    width: 100%;
+    height: 20rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 4rem;
+  }
+  .moreInfo div:nth-child(2), .moreInfo div:nth-child(3) {
+    color: var(--text);
+  }
+  .moreInfo div:nth-child(2) h1, .moreInfo div:nth-child(3) h1 {
+    margin-bottom: 2rem;
+  }
+  .moreInfo div:nth-child(2) p, .moreInfo div:nth-child(3) p {
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+  }
+  .moreInfo div:nth-child(2) p span, .moreInfo div:nth-child(3) p span {
+    font-weight: 300;
+  }
+  .moreInfo div:nth-child(2) {
+    margin-bottom: 5rem;
+  }
+  .moreInfo div:nth-child(3) {
+    margin-bottom: 5rem;
+  }
+  .moreInfo .modalBordersWrap button {
+    width: 14rem;
+    margin: 0.5rem;
+  }
+  .moreInfo .modalBordersWrap button:last-child {
+    margin-bottom: 5rem;
+  }
+}
+@media (min-width: 440px) {
+  .moreInfo div:nth-child(1) {
+    height: 30rem;
+  }
+}
+@media (min-width: 600px) {
+  .moreInfo div:nth-child(1) {
+    height: 40rem;
+  }
+}
+@media (min-width: 1350px) {
+  .moreInfo .contentWrap {
+    padding: 0 5rem;
+    padding-top: 10rem;
+    display: grid;
+    grid-template-columns: 60rem 1fr 1fr;
+    grid-template-areas: "img text1 text2" "img button button";
+    align-content: center;
+  }
+  .moreInfo .contentWrap .flag {
+    grid-area: img;
+  }
+  .moreInfo .contentWrap .textWrap1, .moreInfo .contentWrap .textWrap2 {
+    margin-bottom: 0;
+    padding-top: 5rem;
+  }
+  .moreInfo .contentWrap .textWrap1 {
+    grid-area: text1;
+  }
+  .moreInfo .contentWrap .textWrap2 {
+    grid-area: text2;
+    position: relative;
+  }
+  .moreInfo .contentWrap .modalBordersWrap {
+    grid-area: button;
+  }
+}
+@media (min-width: 1350px){
+  .moreInfo .contentWrap .flag {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 1;
+  }
+  .moreInfo .contentWrap .textWrap1 {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+  }
+  .moreInfo .contentWrap .textWrap2 {
+    -ms-grid-row: 1;
+    -ms-grid-column: 3;
+  }
+  .moreInfo .contentWrap .modalBordersWrap {
+    -ms-grid-row: 2;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 2;
+  }
+}
